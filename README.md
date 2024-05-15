@@ -1,4 +1,9 @@
-# CSCE 412 - Cloud Computing Projects
+# Scalable Tiny SNS - Cloud Computing
+We will implement Google Remote Procedure calls to enable client-server-coordinator interactions that enable clients to issue commands like post, follow, unfollow, list, timeline and the server to respond appropriately.
+
+* Project 1: Develops a client-server system for a social media messaging service, showcasing proficiency in AWS and Python.
+
+* Project 2: Extends Project 1 by implementing a multi-server architecture with a centralized coordinator for efficient client-server routing and management.
 
 ## Project 1: Single Server Social Media Messaging Service
 
