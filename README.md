@@ -60,13 +60,6 @@ MP1 involves the development of a client-server system that simulates a social m
 
 ## Project 2: Multi-Server Social Media Messaging Service
 
-**Description:**
-Certainly! Here's the modified README information for Project 2 using ** for section headings:
-
----
-
-**CSCE 412 - Cloud Computing Project 2: Multi-Server Social Media Messaging Service**
-
 **Overview:**
 
 Project 2 extends the functionalities developed in Project 1, enabling the connection of multiple clients to multiple servers. Unlike Project 1, which allowed connection to a single server, Project 2 introduces a centralized coordinator responsible for routing each client to the correct server based on a calculation involving the user ID.
