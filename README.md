@@ -22,20 +22,41 @@ MP1 involves the development of a client-server system that simulates a social m
 
 **Usage:**
 
-1. **Clone Repository:** Clone the repository to your local machine.
+1. **Compilation:**
+    ```bash
+    make
+    ```
+    Compiles the code using the provided makefile.
 
-   ```bash
-   git clone https://github.com/your_username/your_repository.git
-   ```
+2. **Clear Directory:**
+    ```bash
+    make clean
+    ```
+    Clears the directory and removes .txt files.
 
-2. **Build and Run:** Execute the `make` command to build C++ implementations and run the server. Run clients on terminals to interact with the server.
+3. **Run Server without Glog Messages:**
+    ```bash
+    ./tsd <-p port>
+    ```
+    Runs the server without Glog messages. The port number is optional.
 
-   ```bash
-   cd your_repository
-   make
-   ./server
-   ./client
-   ```
+4. **Run Server with Glog Messages:**
+    ```bash
+    GLOG_logtostderr=1 ./tsd <-p port>
+    ```
+    Runs the server with Glog messages. The port number is optional.
+
+5. **Run Client without Glog Messages:**
+    ```bash
+    ./tsc <-h host_addr -p port> -u user1
+    ```
+    Runs the client without Glog messages. Host address and port are optional, while the username is required.
+
+6. **Run Client with Glog Messages:**
+    ```bash
+    GLOG_logtostderr=1 ./tsc <-h host_addr -p port> -u user1
+    ```
+    Runs the client with Glog messages. Host address and port are optional, while the username is required.
 
 ## Project 2: Multi-Server Social Media Messaging Service
 
@@ -75,3 +96,55 @@ Project 2 extends the functionalities developed in Project 1, enabling the conne
 - **Heartbeat Mechanism**: Introduces a server mutex for thread-safe function calls, especially for heartbeat monitoring. Servers send heartbeat messages to the coordinator at regular intervals to indicate their active status.
 
 - **RunServer Function**: Accepts additional arguments for coordinator IP, coordinator port, cluster ID, and port number. Executes the server and initiates heartbeat monitoring with a fixed interval of 1 second between heartbeats.
+
+**Usage:**
+
+1. **Compile the Code:**
+    ```bash
+    make
+    ```
+    Compiles the code using the provided makefile.
+
+2. **Clear Directory (Remove .txt Files):**
+    ```bash
+    make clean
+    ```
+    Clears the directory and removes .txt files.
+
+3. **Run Server (Without Glog Messages):**
+    ```bash
+    ./tsd -c <clusterId> -s <serverId> -h <coordinatorIP> -k <coordinatorPort> -p <portNum>
+    ```
+    Runs the server without Glog messages. The port number is optional.
+    Example:
+    ```bash
+    ./tsd -c 1 -s 1 -h localhost -k 9090 -p 10000
+    ```
+
+4. **Run Server (With Glog Messages):**
+    ```bash
+    GLOG_logtostderr=1 ./tsd -c <clusterId> -s <serverId> -h <coordinatorIP> -k <coordinatorPort> -p <portNum>
+    ```
+    Runs the server with Glog messages. The port number is optional.
+
+5. **Run Client:**
+    ```bash
+    ./tsc -h <coordinatorIP> -k <coordinatorPort> -u <userId>
+    ```
+    Runs the client. The client contacts the coordinator to get the endpoint to connect to. The user ID must be specified.
+    Example:
+    ```bash
+    ./tsc -h localhost -k 9090 -u 1
+    ```
+
+6. **Run Coordinator:**
+    ```bash
+    ./coordinator -p <portNum>
+    ```
+    Runs the coordinator. The port number is optional.
+    Example:
+    ```bash
+    ./coordinator-p 9090
+    ```
+
+All output/logging on Servers, Coordinator, Synchronizer, and Clients are logged using the glog logging library. Logs by default reside in the `/tmp` directory.
