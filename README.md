@@ -1,5 +1,5 @@
 # Scalable Tiny SNS - Cloud Computing
-We will implement Google Remote Procedure calls to enable client-server-coordinator interactions that enable clients to issue commands like post, follow, unfollow, list, timeline and the server to respond appropriately.
+We will implement Google Remote Procedure Calls (GRPC) to enable client-server-coordinator interactions where clients issue commands like post, follow, unfollow, list, timeline, and the server responds appropriately.
 
 * Project 1: Develops a client-server system for a social media messaging service, showcasing proficiency in AWS and Python.
 
@@ -9,7 +9,7 @@ We will implement Google Remote Procedure calls to enable client-server-coordina
 
 **Description:**
 
-MP1 involves the development of a client-server system that simulates a social media messaging service. The client offers a user-friendly interface with various functionalities to interact with the server, including sending and receiving messages. The server manages client instructions, updating files, and its database accordingly.
+Project 1 develops a client-server system that simulates a social media messaging service. The client offers a user-friendly interface with various functionalities to interact with the server, including sending and receiving messages. The server manages client instructions, updating files, and its database accordingly.
 
 **Key Features:**
 
@@ -17,7 +17,7 @@ MP1 involves the development of a client-server system that simulates a social m
   
 - **Server-Side Functions:** Clients can remotely execute server-side functions, enabling flexible deployment scenarios where the client can be executed on multiple terminals while the server runs on a single instance.
 
-- **Protocol Buffers:** Definitions specified in `sns.proto` facilitate easy implementation in C++. Upon running the `make` command, relevant C++ class implementations (e.g., `sns.h`) are generated, including getters, setters, constructors, and destructors.
+- **Protocol Buffers:** Definitions specified in the `sns.proto` facilitate easy implementation in C++. Upon running the `make` command, relevant C++ class implementations (e.g., `sns.h`) are generated, including getters, setters, constructors, and destructors.
 
 - **Message Struct:** Defines a strict communication format between the server and client, streamlining message handling and ensuring uniformity.
 
@@ -67,7 +67,7 @@ MP1 involves the development of a client-server system that simulates a social m
 
 **Overview:**
 
-Project 2 extends the functionalities developed in Project 1, enabling the connection of multiple clients to multiple servers. Unlike Project 1, which allowed connection to a single server, Project 2 introduces a centralized coordinator responsible for routing each client to the correct server based on a calculation involving the user ID.
+Project 2 extends the functionalities developed in Project 1, enabling the connection of multiple clients to multiple servers. Unlike Project 1, which allows connection to a single server, Project 2 introduces a centralized coordinator responsible for routing each client to the correct server based on a user ID calculation.
 
 **Key Additions:**
 
