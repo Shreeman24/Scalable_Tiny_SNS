@@ -1,5 +1,6 @@
 # Scalable Tiny SNS - Cloud Computing
 We will implement Google Remote Procedure Calls (GRPC) to enable client-server-coordinator interactions where clients issue commands like post, follow, unfollow, list, timeline, and the server responds appropriately.
+The projects are executed on Oracle VM VirtualBox with Linux VM on local machine.
 
 * Project 1: Develops a client-server system for a social media messaging service, showcasing proficiency in AWS and Python.
 
